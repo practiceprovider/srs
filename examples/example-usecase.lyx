@@ -75,10 +75,25 @@ Use Case Example
 
 \begin_layout UseCase1
 User authentication
+\begin_inset CommandInset label
+LatexCommand label
+name "usc:User-authentication"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Goal
-Authentic user to the system for the purpose of accessing the system
+Authentic user to the system for the purpose of accessing the system.
+ Supports 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "rqmt:Users-must-authenticate"
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout PrimaryUser
@@ -125,6 +140,32 @@ Unique identifier and secret do not match
 
 \begin_layout FailureScenario
 Actor enters incorrect one time password
+\end_layout
+
+\begin_layout Section*
+Requirement Example
+\end_layout
+
+\begin_layout Requirement1
+Users must authenticate themselves to the system
+\begin_inset CommandInset label
+LatexCommand label
+name "rqmt:Users-must-authenticate"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using either a web HTML form, see 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "usc:User-authentication"
+
+\end_inset
+
+ or SAML...
 \end_layout
 
 \end_body
