@@ -1,0 +1,71 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[book]{srs}
+# SRS textclass definition file. 
+
+
+Format 35
+Input usecase.inc     #
+Input requirement.inc #
+Input feature.inc     #
+Input testcase.inc    #
+Input fields.inc      #
+Input stdclass.inc
+Input numreport.inc
+
+
+Sides           2
+PageStyle       Headings
+
+
+NoStyle Abstract
+
+
+Style Bibliography
+	TopSep                4
+	LabelString           "Bibliography"
+	LabelFont
+	  Series              Bold
+	  Size                Huge
+	EndFont
+End
+
+Style Note
+  LatexType             Environment
+  LatexName             note_l
+  
+  LabelType             Centered_Top_Environment
+  LabelString           "NOTE"
+  AlignPossible         Left
+  LeftMargin            "MMMMM"
+  RightMargin           "MMMMM"
+  ParSkip               0.7
+  ParSep                0.7
+  TopSep                0.7
+  BottomSep             0.7
+
+  Font
+  EndFont
+  Preamble
+	\newlength{\scratchLength}
+        \setlength{\scratchLength}{\leftmargin}
+        \addtolength{\scratchLength}{1cm}
+        \newenvironment{note_l}
+                {
+                \begin{list}{}
+                        {
+                        \setlength{\leftmargin}{\scratchLength}
+                        \setlength{\rightmargin}{\leftmargin}
+                        \setlength{\parsep}{1cm}
+                        }
+                \item[]
+                \hrulefill
+                \\[0.1cm]
+                {\centering\large NOTE \\[0.2cm]}
+                }
+                {
+                \\[0.2cm] .\hrulefill \\
+                \par
+                \end{list}
+                }
+  EndPreamble
+End
